@@ -2,16 +2,16 @@
 <persistence version="2.0"
 	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="com.esprit.medicalSoftEJB">
+	<persistence-unit name="edu.espritCS.medicalSoftEJB">
 		<jta-data-source>java:/MEDICALSOFT_DS</jta-data-source>
-		<class>com.esprit.medicalSoftEJB.entities.Utilisateur</class>
-		<class>com.esprit.medicalSoftEJB.entities.Role</class>
-		<class>com.esprit.medicalSoftEJB.entities.Patient</class>
-		<class>com.esprit.medicalSoftEJB.entities.Consultation</class>
-		<class>com.esprit.medicalSoftEJB.entities.RendezVous</class>
-		<class>com.esprit.medicalSoftEJB.entities.Ordonnance</class>
-		<class>com.esprit.medicalSoftEJB.entities.Medicament</class>
-		<class>com.esprit.medicalSoftEJB.entities.Cabinet</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.User</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Role</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Patient</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Consultation</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Appointment</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Prescription</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Drug</class>
+		<class>edu.espritCS.medicalSoftEJB.entities.Office</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
