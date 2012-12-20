@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.office;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -35,7 +37,12 @@ public class OfficeService implements OfficeServiceLocal, OfficeServiceRemote {
 	}
 
 	@Override
-	public void findOfficeById(Long id) {
-		entityManager.find(Office.class, id);
+	public Office getOffice() {
+		List list = entityManager.createQuery("select o from Office o")
+				.getResultList();
+		if (list != null && (!list.isEmpty())) {
+			return (Office) list.get(0);
+		}
+		return null;
 	}
 }

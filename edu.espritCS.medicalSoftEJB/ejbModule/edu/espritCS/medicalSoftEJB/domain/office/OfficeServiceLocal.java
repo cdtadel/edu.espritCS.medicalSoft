@@ -13,6 +13,6 @@ public interface OfficeServiceLocal {
 
 	void removeOffice(Office office);
 
-	void findOfficeById(Long id);
+	Office getOffice();
 
 }

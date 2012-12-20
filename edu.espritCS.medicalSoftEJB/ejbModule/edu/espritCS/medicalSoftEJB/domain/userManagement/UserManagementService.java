@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.userManagement;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -58,7 +60,24 @@ public class UserManagementService implements UserManagementServiceLocal,
 
 	@Override
 	public User login(String login, String pwd) {
-		// TODO Auto-generated method stub
+		List list = entityManager.createQuery(
+				"select u from User u where u.login='" + login
+						+ "' and u.password='" + pwd + "'").getResultList();
+		if (list != null && (!list.isEmpty())) {
+			return (User)list.get(0);
+		}
 		return null;
+	}
+
+	@Override
+	public Role findRoleById(Long id) {
+		return entityManager.find(Role.class, id);
+	}
+
+	@Override
+	public List<Role> getRoles() {
+
+		return entityManager.createQuery("select r from Role r")
+				.getResultList();
 	}
 }

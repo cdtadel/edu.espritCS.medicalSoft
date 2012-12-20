@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -30,6 +31,7 @@ public class Appointment implements Serializable {
 	}
 
 	@Id
+	@GeneratedValue
 	public Long getIdAppointment() {
 		return idAppointment;
 	}

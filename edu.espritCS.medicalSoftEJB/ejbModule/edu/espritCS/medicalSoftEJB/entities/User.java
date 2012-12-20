@@ -3,6 +3,7 @@ package edu.espritCS.medicalSoftEJB.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -27,6 +28,7 @@ public class User implements Serializable {
 	}
 
 	@Id
+	@GeneratedValue
 	public Long getIdUser() {
 		return idUser;
 	}

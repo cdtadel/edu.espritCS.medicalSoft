@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13551719061710" configfile="/edu.espritCS.medicalSoftWeb/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13551719061710" configfile="/edu.espritCS.medicalSoftWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="562" id="pf135594365534315" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf135594365534316" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="562" id="pf135594365534317" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13560324727810 pf13560449600932 pf13560449600933" inlinks="pf135594365534316" path="/ui/home/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/appointment/addAppointment.xhtml" x="554" y="178" id="pf13560324727811" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13560324727810" path="/ui/appointment/addAppointment.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/patient/addPatient.xhtml" x="554" y="562" id="pf13560449600934" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf13560449600932" path="/ui/patient/addPatient.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/patient/listPatients.xhtml" x="554" y="946" id="pf13560449600935" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf13560449600933" path="/ui/patient/listPatients.xhtml"/>
+  <links id="pf135594365534316" target="pf135594365534317" source="pf135594365534315" outcome="OK" fromaction="#{userManagementCtr.doLogin}"/>
+  <links id="pf13560324727810" target="pf13560324727811" source="pf135594365534317" outcome="addAppointment"/>
+  <links id="pf13560449600932" target="pf13560449600934" source="pf135594365534317" outcome="addPatient"/>
+  <links id="pf13560449600933" target="pf13560449600935" source="pf135594365534317" outcome="listPatients"/>
+</pageflow:Pageflow>

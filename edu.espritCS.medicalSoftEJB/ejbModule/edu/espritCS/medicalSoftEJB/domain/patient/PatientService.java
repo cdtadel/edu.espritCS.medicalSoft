@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import edu.espritCS.medicalSoftEJB.entities.Patient;
+import edu.espritCS.medicalSoftEJB.entities.User;
 
 /**
  * Session Bean implementation class LifeCycleServices
@@ -53,8 +54,11 @@ public class PatientService implements PatientServiceLocal,
 
 	@Override
 	public List<Patient> findAllPatient() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List list = entityManager.createQuery(
+				"select p from Patient p").getResultList();
+		
+		return list;
 	}
 
 }

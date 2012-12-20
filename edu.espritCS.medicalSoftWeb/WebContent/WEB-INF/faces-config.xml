@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
-    version="2.1">
-
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/login.xhtml</from-view-id>		
+		<navigation-case>
+			<from-action>#{userManagementCtr.doLogin}</from-action>
+			<from-outcome>OK</from-outcome>
+			<to-view-id>/ui/home/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>home.xhtml</display-name>
+		<from-view-id>/ui/home/home.xhtml</from-view-id>		
+		<navigation-case>
+			<from-outcome>addAppointment</from-outcome>
+			<to-view-id>/ui/appointment/addAppointment.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>addPatient</from-outcome>
+			<to-view-id>/ui/patient/addPatient.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listPatients</from-outcome>
+			<to-view-id>/ui/patient/listPatients.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 </faces-config>
