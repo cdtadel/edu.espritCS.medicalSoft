@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.consultation;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import edu.espritCS.medicalSoftEJB.entities.Consultation;
@@ -15,4 +17,5 @@ public interface ConsultationServiceLocal {
 
 	void findConsultationById(Long id);
 
+	List<Consultation> findAllConsultation();
 }

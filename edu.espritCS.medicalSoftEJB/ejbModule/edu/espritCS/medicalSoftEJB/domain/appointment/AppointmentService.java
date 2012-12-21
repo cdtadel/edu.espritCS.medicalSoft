@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.appointment;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -38,6 +40,14 @@ public class AppointmentService implements AppointmentServiceLocal,
 	@Override
 	public void findAppointmentById(Long id) {
 		entityManager.find(Appointment.class, id);
+	}
+
+	@Override
+	public List<Appointment> findAllAppointment() {
+		List list = entityManager.createQuery("select a from Appointment a")
+				.getResultList();
+
+		return list;
 	}
 
 }

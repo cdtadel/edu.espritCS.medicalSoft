@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.prescription;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -39,6 +41,14 @@ public class PrescriptionService implements PrescriptionServiceLocal,
 	@Override
 	public void findPrescriptionById(Long id) {
 		entityManager.find(Prescription.class, id);
+	}
+
+	@Override
+	public List<Prescription> findAllPrescription() {
+		List list = entityManager.createQuery("select p from Prescription p")
+				.getResultList();
+
+		return list;
 	}
 
 }

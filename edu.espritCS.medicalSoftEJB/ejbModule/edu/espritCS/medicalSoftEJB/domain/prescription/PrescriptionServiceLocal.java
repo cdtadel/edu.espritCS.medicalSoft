@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.prescription;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import edu.espritCS.medicalSoftEJB.entities.Prescription;
@@ -15,4 +17,5 @@ public interface PrescriptionServiceLocal {
 
 	void findPrescriptionById(Long id);
 
+	List<Prescription> findAllPrescription();
 }

@@ -1,5 +1,7 @@
 package edu.espritCS.medicalSoftEJB.domain.consultation;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -38,5 +40,13 @@ public class ConsultationService implements ConsultationServiceLocal,
 	@Override
 	public void findConsultationById(Long id) {
 		entityManager.find(Consultation.class, id);
+	}
+
+	@Override
+	public List<Consultation> findAllConsultation() {
+		List list = entityManager.createQuery("select c from Consultation c")
+				.getResultList();
+
+		return list;
 	}
 }

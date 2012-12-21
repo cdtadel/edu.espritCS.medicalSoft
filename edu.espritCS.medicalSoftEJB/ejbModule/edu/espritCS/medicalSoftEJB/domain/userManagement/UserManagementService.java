@@ -62,7 +62,7 @@ public class UserManagementService implements UserManagementServiceLocal,
 	public User login(String login, String pwd) {
 		List list = entityManager.createQuery(
 				"select u from User u where u.login='" + login
-						+ "' and u.password='" + pwd + "'").getResultList();
+						+ "' and u.password='" + pwd+"'").getResultList();
 		if (list != null && (!list.isEmpty())) {
 			return (User)list.get(0);
 		}

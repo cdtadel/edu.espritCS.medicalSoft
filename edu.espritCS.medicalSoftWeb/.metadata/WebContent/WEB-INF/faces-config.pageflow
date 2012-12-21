@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13551719061710" configfile="/edu.espritCS.medicalSoftWeb/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="562" id="pf135594365534315" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf135594365534316" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="562" id="pf135594365534317" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13560324727810 pf13560449600932 pf13560449600933" inlinks="pf135594365534316" path="/ui/home/home.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="ui/appointment/addAppointment.xhtml" x="554" y="178" id="pf13560324727811" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13560324727810" path="/ui/appointment/addAppointment.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="ui/patient/addPatient.xhtml" x="554" y="562" id="pf13560449600934" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf13560449600932" path="/ui/patient/addPatient.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="ui/patient/listPatients.xhtml" x="554" y="946" id="pf13560449600935" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf13560449600933" path="/ui/patient/listPatients.xhtml"/>
-  <links id="pf135594365534316" target="pf135594365534317" source="pf135594365534315" outcome="OK" fromaction="#{userManagementCtr.doLogin}"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="178" id="pf135594365534315" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13561085062030" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="122" y="2098" id="pf135594365534317" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13560324727810 pf13560449600932 pf13560449600933 pf13560814282340 pf13560814282341 pf13560814282342 pf13560814766717 pf135608149556210 pf13561085062031" path="/ui/home/menu.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/appointment/addAppointment.xhtml" x="338" y="562" id="pf13560324727811" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13560324727810" path="/ui/appointment/addAppointment.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/patient/addPatient.xhtml" x="338" y="946" id="pf13560449600934" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" inlinks="pf13560449600932" path="/ui/patient/addPatient.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listPatients.xhtml" x="338" y="3634" id="pf13560449600935" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf13561026238124" inlinks="pf13560449600933 pf13561026238125" path="/ui/patient/listPatients.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/appointment/listAppointment.xhtml" x="338" y="1330" id="pf13560814282343" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf13560814282340" path="/ui/appointment/listAppointment.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/consultation/listConsultations.xhtml" x="338" y="1714" id="pf13560814282344" referenceLink="//@navigationRule.1/@navigationCase.6/@toViewId|" inlinks="pf13560814282341" path="/ui/consultation/listConsultations.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/consultation/addConsultation.xhtml" x="338" y="2098" id="pf13560814282345" referenceLink="//@navigationRule.1/@navigationCase.5/@toViewId|" inlinks="pf13560814282342" path="/ui/consultation/addConsultation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/prescription/addPrescription.xhtml" x="338" y="2482" id="pf13560814766719" referenceLink="//@navigationRule.1/@navigationCase.7/@toViewId|" inlinks="pf13560814766717" path="/ui/prescription/addPrescription.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/prescription/listPrescriptions.xhtml" x="338" y="2866" id="pf135608149556211" referenceLink="//@navigationRule.1/@navigationCase.8/@toViewId|" inlinks="pf135608149556210" path="/ui/prescription/listPrescriptions.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listPatients.xhtml" x="122" y="2866" id="pf13561005389840" referenceLink="//@navigationRule.2/@fromViewId|" path="/listPatients.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updatePatient.xhtml" x="122" y="3634" id="pf13561005389842" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13561026238125" inlinks="pf13561026238124" path="/ui/patient/updatePatient.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/home/home.xhtml" x="338" y="178" id="pf13561085062032" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13561085062030" path="/ui/home/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ui/office/updateOffice.xhtml" x="338" y="3250" id="pf13561085062033" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf13561085062031" path="/ui/office/updateOffice.xhtml"/>
   <links id="pf13560324727810" target="pf13560324727811" source="pf135594365534317" outcome="addAppointment"/>
   <links id="pf13560449600932" target="pf13560449600934" source="pf135594365534317" outcome="addPatient"/>
   <links id="pf13560449600933" target="pf13560449600935" source="pf135594365534317" outcome="listPatients"/>
+  <links id="pf13560814282340" target="pf13560814282343" source="pf135594365534317" outcome="listAppointments"/>
+  <links id="pf13560814282341" target="pf13560814282344" source="pf135594365534317" outcome="listConsultations"/>
+  <links id="pf13560814282342" target="pf13560814282345" source="pf135594365534317" outcome="addConsultation"/>
+  <links id="pf13560814766717" target="pf13560814766719" source="pf135594365534317" outcome="addPrescription"/>
+  <links id="pf135608149556210" target="pf135608149556211" source="pf135594365534317" outcome="listPrescriptions"/>
+  <links id="pf13561026238124" target="pf13561005389842" source="pf13560449600935" outcome="update"/>
+  <links id="pf13561026238125" target="pf13560449600935" source="pf13561005389842" outcome="updateOK"/>
+  <links id="pf13561085062030" target="pf13561085062032" source="pf135594365534315" outcome="OK" fromaction="#{userManagementCtr.doLogin}"/>
+  <links id="pf13561085062031" target="pf13561085062033" source="pf135594365534317" outcome="updateOffice"/>
 </pageflow:Pageflow>

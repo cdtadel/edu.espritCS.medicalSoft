@@ -4,6 +4,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
 	version="2.1">
+	<converter>
+        <converter-id>roleConverter</converter-id>
+        <converter-class>edu.espritCS.medicalSoftWeb.ctr.RoleConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>patientConverter</converter-id>
+        <converter-class>edu.espritCS.medicalSoftWeb.ctr.PatientConverter</converter-class>
+    </converter>
 	<navigation-rule>
 		<display-name>login.xhtml</display-name>
 		<from-view-id>/login.xhtml</from-view-id>		
@@ -15,10 +23,19 @@
 	</navigation-rule>
 	<navigation-rule>
 		<display-name>home.xhtml</display-name>
-		<from-view-id>/ui/home/home.xhtml</from-view-id>		
+		<from-view-id>/ui/home/menu.xhtml</from-view-id>		
 		<navigation-case>
 			<from-outcome>addAppointment</from-outcome>
 			<to-view-id>/ui/appointment/addAppointment.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>updateOffice</from-outcome>
+			<to-view-id>/ui/office/updateOffice.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>listAppointments</from-outcome>
+			<to-view-id>/ui/appointment/listAppointment.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>addPatient</from-outcome>
@@ -28,6 +45,42 @@
 			<from-outcome>listPatients</from-outcome>
 			<to-view-id>/ui/patient/listPatients.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>addConsultation</from-outcome>
+			<to-view-id>/ui/consultation/addConsultation.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listConsultations</from-outcome>
+			<to-view-id>/ui/consultation/listConsultations.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>addPrescription</from-outcome>
+			<to-view-id>/ui/prescription/addPrescription.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listPrescriptions</from-outcome>
+			<to-view-id>/ui/prescription/listPrescriptions.xhtml</to-view-id>
+		</navigation-case>
+<!-- 		<navigation-case> -->
+<!-- 			<from-action>#{patientCtr.doGoToUpdatePage}</from-action> -->
+<!-- 			<from-outcome>update</from-outcome> -->
+<!-- 			<to-view-id>/ui/patient/updatePatient.xhtml</to-view-id> -->
+<!-- 		</navigation-case> -->
 	</navigation-rule>
-	
+	<navigation-rule>
+		<display-name>listPatients.xhtml</display-name>
+		<from-view-id>/ui/patient/listPatients.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>update</from-outcome>
+			<to-view-id>/ui/patient/updatePatient.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>updatePatient.xhtml</display-name>
+		<from-view-id>/ui/patient/updatePatient.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateOK</from-outcome>
+			<to-view-id>/ui/patient/listPatients.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>
